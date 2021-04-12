@@ -4,7 +4,7 @@
 
 using namespace std;
 
-char Eleccion(){
+char Eleccion(){ //solicita el valor necesario para empezar a jugar
     char valor;
     
     do{
@@ -13,18 +13,16 @@ char Eleccion(){
     } 
     while (valor != 'X' && valor != 'O' && valor != 'x' && valor != 'o' && valor != '0');
 
-     if (valor == 'X' || valor == 'x')
-    {
+     if (valor == 'X' || valor == 'x'){
         cout << "Eligio " << valor << endl;
     }
-    if (valor == 'O' || valor == 'o' || valor == '0')
-    {
+    if (valor == 'O' || valor == 'o' || valor == '0'){
         cout << "Eligio " << valor << endl;
     }
     return valor;
 }
 
-void iniciar(char mat[5][5]) { 
+void iniciar(char mat[5][5]) { //inicia la matriz con su forma inicial
     char x = '1';
     for (int i = 1; i <= 5; i++) {
         for (int j = 1; j <= 5; j++) {
@@ -47,7 +45,7 @@ void iniciar(char mat[5][5]) {
 
 
 
-void impMatriz(char mat[5][5]) {
+void impMatriz(char mat[5][5]) { //imprime la matriz
 
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {
@@ -57,7 +55,7 @@ void impMatriz(char mat[5][5]) {
     }
 }
 
-void ponerX(char mat[5][5], int valor) {
+void ponerX(char mat[5][5], int valor) { // usa el valor para ponerlo en la poscion indicada
     
     if (valor == 1 ){
         mat[0][0] = 'X';
@@ -88,7 +86,7 @@ void ponerX(char mat[5][5], int valor) {
     }
 }
 
-void ponerO(char mat[5][5], int valor) {
+void ponerO(char mat[5][5], int valor) { // usa el valor para ponerlo en la poscion indicada
     
     if (valor == 1) {
         mat[0][0] = 'O';
@@ -119,7 +117,7 @@ void ponerO(char mat[5][5], int valor) {
     }
 }
 
-void pedir(char matriz[5][5],char op) {
+void pedir(char matriz[5][5],char op) { 
     int ubicacion;
     cout << "Donde poner" << op << " ";
     cin >> ubicacion;
@@ -139,4 +137,6 @@ int main()
     impMatriz(matriz);
     system("pause");
 }
+
+
 
